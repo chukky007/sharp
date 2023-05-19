@@ -23,7 +23,7 @@ const togglesReducer = (state = initialState, action) => {
         case 'PLAYSOUND':
             // taking the bank state as 'string' (input) and returning the output as an 'object'
             let outputBank = null;
-            if (state.bank == "BANK1") {
+            if (state.bank === "BANK1") {
                 outputBank = bankOne
             } else {
                 outputBank = bankTwo
@@ -31,7 +31,7 @@ const togglesReducer = (state = initialState, action) => {
             //assigning the outputbank[action.payload] to a variable that can be used for the audio
             let soundNameState = outputBank[action.payload]
             audio = new Audio(httpFirstPart + soundNameState + httpMpPart)
-            if (state.power == "ON") {
+            if (state.power === "ON") {
                 audio.volume = state.volume
                 audio.play()
                 return {
