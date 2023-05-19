@@ -52,7 +52,7 @@ jobs:
         npm run build --if-present
     
     - name: Create artifact archive
-      run: tar -czvf node-app.tar.gz .
+      run: tar -czvf node-app.tar.gz --ignore-failed-read .
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
