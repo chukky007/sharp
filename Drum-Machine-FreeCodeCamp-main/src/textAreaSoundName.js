@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { connect } from 'react-redux';
-import { playSoundAction } from './drumAction'
+//import { playSoundAction } from './drumAction'
 
 const TextArea = ({ soundName}) => {
     

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { applyMiddleware, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'
+//import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux';
 import togglesReducer from './drumReducer';
 import Drum from './drum';

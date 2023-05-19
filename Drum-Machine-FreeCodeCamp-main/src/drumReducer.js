@@ -39,6 +39,8 @@ const togglesReducer = (state = initialState, action) => {
                     soundName: soundNameState,
                 };
             }
+            break;
+
         case 'INCREASE_VOLUME':
             return {
                 ...state,
