@@ -50,12 +50,15 @@ jobs:
       run: |
         npm install
         npm run build --if-present
+    
+    - name: Create artifact for deployment job
+      run: tar -czvf node-app.tar.gz
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
         name: node-app
-        path: .
+        path: node-app.tar.gz
 
   deploy:
     permissions:
@@ -71,6 +74,9 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: node-app
+        
+    - name: Extract artifact
+      run: tar -xzvf node-app.tar.gz
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
