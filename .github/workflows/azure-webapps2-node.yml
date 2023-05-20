@@ -78,10 +78,10 @@ jobs:
     #- name: Extract artifact
      # run: tar -xzvf node-app.tar.gz
     
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    #- name: Azure Login
+     # uses: azure/login@v1
+      #with:
+       # creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
