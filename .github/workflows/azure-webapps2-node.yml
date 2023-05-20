@@ -77,11 +77,16 @@ jobs:
         
     #- name: Extract artifact
      # run: tar -xzvf node-app.tar.gz
+    
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3B2D48F29685457881F331810864252C }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
