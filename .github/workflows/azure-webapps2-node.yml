@@ -90,4 +90,4 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3B2D48F29685457881F331810864252C }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-        strategy: runFromPackage
+        publish-type: runFromPackage
